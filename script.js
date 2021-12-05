@@ -6,9 +6,14 @@ let blackBtn = document.querySelector('#blackBtn');
 let rainbowBtn = document.querySelector('#rainbowBtn');
 let gridBtn = document.querySelector('#gridBtn');
 let clearBtn = document.querySelector('#clearBtn');
+let eraserBtn = document.querySelector('#eraserBtn');
 
-let gridSize = 16 * 16;
-let gridView = false;
+let gridSize = document.getElementById('gridSizeInput').value;
+
+let gridSizeInput = document.getElementById('gridSizeInput');
+let sizeLabel = document.getElementById('sizeLabel');
+
+let gridView = true;
 let userColor = '#e66465';
 let colorMode = 'color';
 
@@ -36,11 +41,19 @@ let changeCellColor = (cell) => {
 		case 'rainbow':
 			cell.style.background = randomColor();
 			break;
+		case 'eraser':
+			cell.style.background = '#fff';
+			break;
 	}
 };
 
 let drawGrid = (grid, gridSize) => {
-	for (let i = 0; i < gridSize; i++) {
+	grid.style.cssText += `
+        grid-template-columns: repeat(${gridSize}, 1fr); 
+        grid-template-rows: repeat(${gridSize}, 1fr);
+    `;
+
+	for (let i = 0; i < Math.pow(gridSize, 2); i++) {
 		let cell = document.createElement('div');
 		cell.classList.add('cell');
 
@@ -53,6 +66,10 @@ let drawGrid = (grid, gridSize) => {
 		});
 		grid.appendChild(cell);
 	}
+
+	sizeLabel.innerHTML = `<span>
+                        ${gridSize} x ${gridSize}
+                    </span>`;
 };
 
 let clearGrid = () => {
@@ -71,6 +88,8 @@ let activateButton = (colorMode) => {
 		blackBtn.classList.add('active');
 	} else if (colorMode === 'rainbow') {
 		rainbowBtn.classList.add('active');
+	} else if (colorMode === 'eraser') {
+		eraserBtn.classList.add('active');
 	}
 };
 
@@ -89,6 +108,11 @@ rainbowBtn.addEventListener('click', () => {
 	activateButton(colorMode);
 });
 
+eraserBtn.addEventListener('click', () => {
+	colorMode = 'eraser';
+	activateButton(colorMode);
+});
+
 clearBtn.addEventListener('click', clearGrid);
 
 gridBtn.addEventListener('click', () => {
@@ -102,6 +126,18 @@ gridBtn.addEventListener('click', () => {
 });
 
 colorPicker.addEventListener('input', watchColorPicker, false);
+
+gridSizeInput.addEventListener(
+	'change',
+	function () {
+		gridSize = document.getElementById('gridSizeInput').value;
+		sizeLabel = document.getElementById('sizeLabel').innerHTML = `<span>
+                        ${gridSize} x ${gridSize}
+                    </span>`;
+		clearGrid();
+	},
+	false
+);
 
 drawGrid(grid, gridSize);
 activateButton(colorMode);

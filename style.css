@@ -63,10 +63,62 @@ html {
 }
 
 body {
-	line-height: 1;
+	font-family: 'Oswald', sans-serif;
+	color: #343a40;
 
+	line-height: 1;
 	/* Only works if nothing is absolutly positioned in relation to body */
 	overflow-x: hidden;
+
+	display: grid;
+	grid-template-columns: 1.5fr 2fr;
+	column-gap: 3.2rem;
+	height: 100vh;
+}
+
+h1 {
+	font-family: 'Lobster', cursive;
+	font-size: 5.2rem;
+	text-align: center;
+	grid-column: 1 / -1;
+}
+
+footer {
+	font-size: 1.8rem;
+	text-align: center;
+	align-self: flex-end;
+	justify-content: center;
+	grid-column: 1 / -1;
+	height: 3.6rem;
+}
+
+.btn,
+#colorPicker {
+	width: 20rem;
+	height: 3rem;
+	outline: none;
+	border: none;
+	background-color: #ced4da;
+}
+
+.btn.active {
+	background-color: #868e96;
+}
+
+#colorPicker {
+	width: 8rem;
+	height: 8rem;
+	border: none;
+	background: none;
+}
+
+.buttons {
+	justify-self: flex-end;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
 }
 
 .grid {
@@ -77,6 +129,7 @@ body {
 	grid-template-rows: repeat(16, 1fr);
 	align-items: stretch;
 	justify-content: stretch;
+	border: 1rem solid #ced4da;
 }
 
 .cell {
@@ -84,5 +137,5 @@ body {
 }
 
 .cell--border {
-	border: 1px solid black;
+	border: 1px solid #ced4da;
 }

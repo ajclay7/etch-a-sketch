@@ -6,19 +6,44 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Etch-A-Sketch</title>
 
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&display=swap"
+			rel="stylesheet"
+		/>
+
 		<link rel="stylesheet" href="style.css" />
 
 		<script defer src="script.js"></script>
 	</head>
 	<body>
+		<h1>Etch-A-Sketch</h1>
 		<div class="buttons">
-			<input type="color" id="colorPicker" name="head" value="#e66465" />
+			<input type="color" id="colorPicker" name="colorPicker" value="#e66465" />
 			<button class="btn" id="colorBtn">Color</button>
 			<button class="btn" id="blackBtn">Black</button>
 			<button class="btn" id="rainbowBtn">Rainbow</button>
+			<button class="btn" id="eraserBtn">Erase</button>
 			<button class="btn" id="clearBtn">Clear</button>
 			<button class="btn" id="gridBtn">Toggle Grid</button>
+			<label for="gridSize" id="sizeLabel"></label>
+			<input
+				type="range"
+				id="gridSizeInput"
+				name="gridSize"
+				min="2"
+				max="100"
+				value="16"
+			/>
 		</div>
 		<div class="grid"></div>
+
+		<footer class="footer">
+			<p>Copyright © 2021 Anthony Clay</p>
+			<a href="https://github.com/michalosman" target="_blank">
+				<i class="fab fa-github" aria-hidden="true"></i>
+			</a>
+		</footer>
 	</body>
 </html>
