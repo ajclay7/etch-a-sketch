@@ -13,6 +13,13 @@
 			rel="stylesheet"
 		/>
 
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+			crossorigin="anonymous"
+		/>
+
 		<link rel="stylesheet" href="style.css" />
 
 		<script defer src="script.js"></script>
@@ -21,12 +28,24 @@
 		<h1>Etch-A-Sketch</h1>
 		<div class="buttons">
 			<input type="color" id="colorPicker" name="colorPicker" value="#e66465" />
-			<button class="btn" id="colorBtn">Color</button>
-			<button class="btn" id="blackBtn">Black</button>
-			<button class="btn" id="rainbowBtn">Rainbow</button>
-			<button class="btn" id="eraserBtn">Erase</button>
-			<button class="btn" id="clearBtn">Clear</button>
-			<button class="btn" id="gridBtn">Toggle Grid</button>
+			<button class="btn" id="colorBtn">
+				<i class="fas fa-paint-brush"></i> Color
+			</button>
+			<button class="btn" id="blackBtn">
+				<i class="fas fa-pen"></i> Black
+			</button>
+			<button class="btn" id="rainbowBtn">
+				<i class="fas fa-rainbow"></i> Rainbow
+			</button>
+			<button class="btn" id="eraserBtn">
+				<i class="fas fa-eraser"></i> Erase
+			</button>
+			<button class="btn" id="clearBtn">
+				<i class="fas fa-trash"></i> Clear
+			</button>
+			<button class="btn" id="gridBtn">
+				<i class="fas fa-border-all"></i> Toggle Grid
+			</button>
 			<label for="gridSize" id="sizeLabel"></label>
 			<input
 				type="range"

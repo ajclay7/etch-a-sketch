@@ -97,12 +97,14 @@ footer {
 	width: 20rem;
 	height: 3rem;
 	outline: none;
-	border: none;
-	background-color: #ced4da;
+	border: 1px solid #868e96;
+	background-color: #fff;
+	border-radius: 0.5rem;
 }
 
 .btn.active {
 	background-color: #868e96;
+	color: #f1f3f5;
 }
 
 #colorPicker {
