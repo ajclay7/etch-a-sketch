@@ -1,0 +1,88 @@
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px);
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 
+/ 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights 
+Default: 1
+Small: 1.05
+Large: 1.8
+Paragraph default: 1.6
+
+- Letter spacing
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+--- 02 COLORS
+- Primary: 
+
+- Tints:
+
+- Shades:
+
+- Accents:
+- Greys:
+
+--- 03 IMAGES
+
+
+--- 05 SHADOWS
+
+--- 06 BORDER-RADIUS
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	/* font-size: 10px; */
+	/* 10px / 16px = 0.625 = 62.5% */
+	/* Percentage of user's browser font-size setting */
+	font-size: 62.5%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+body {
+	line-height: 1;
+
+	/* Only works if nothing is absolutly positioned in relation to body */
+	overflow-x: hidden;
+}
+
+.grid {
+	width: 50rem;
+	height: 50rem;
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	grid-template-rows: repeat(16, 1fr);
+	align-items: stretch;
+	justify-content: stretch;
+}
+
+.cell {
+	background-color: #fff;
+}
+
+.cell--border {
+	border: 1px solid black;
+}
