@@ -163,6 +163,10 @@ footer .btn:active {
 	gap: 2rem;
 }
 
+#sizeLabel {
+	font-size: 2rem;
+}
+
 .grid {
 	width: 64rem;
 	height: 64rem;
